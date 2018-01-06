@@ -1,0 +1,90 @@
+﻿<Page x:Class="JackyFinalProject.Products.ProductsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JackyFinalProject.Products"
+      mc:Ignorable="d" 
+      d:DesignHeight="485" d:DesignWidth="1160"
+      Title="Products Information">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock Name="productTextBlockSearchProduct" Text=" Search: Type Product Name Here" 
+                   Style="{StaticResource TextBlockStyle13}" Margin="0,15,25,26" Width="Auto" Height="Auto" Grid.ColumnSpan="3" Grid.Column="8" />
+        <TextBox x:Name="productTextBoxSearchProductWindow"
+                  Style="{StaticResource TextBoxStyle4}" Margin="0,15,25,26" Width="Auto" Height="Auto" Grid.ColumnSpan="3" Grid.Column="8" TextChanged="productTextBoxSearchProductWindow_TextChanged" 
+                  />
+        <ListView x:Name="listViewProductPageCategoryTable" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="360" 
+                 Margin="20,60,0,0" Grid.RowSpan="6" VerticalAlignment="Top" Width="200" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Category ID" DisplayMemberBinding="{Binding CategoryID}"/>
+                    <GridViewColumn Header="Category" DisplayMemberBinding="{Binding Category}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView x:Name="listViewProductPageSubCategoryTable" Grid.ColumnSpan="3" Grid.Column="2" Height="360" 
+                  Margin="46,60,44,0" Grid.RowSpan="6" VerticalAlignment="Top"
+                  ItemsSource="{Binding ElementName=listViewProductPageCategoryTable, Path=SelectedItem.ProductSubCategories}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Subcategory ID" DisplayMemberBinding="{Binding SubCategoryID}"/>
+                    <GridViewColumn Header="Subcategory" DisplayMemberBinding="{Binding SubCategory}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView x:Name="listViewProductPageProductTable" Grid.ColumnSpan="7" Grid.Column="4" HorizontalAlignment="Left" Height="360" 
+                  Margin="67,60,0,0" Grid.RowSpan="6" VerticalAlignment="Top" Width="583"
+                  ItemsSource="{Binding ElementName=listViewProductPageSubCategoryTable, Path=SelectedItem.Products}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Product ID" DisplayMemberBinding="{Binding ProductID}"/>
+                    <GridViewColumn Header="Retailer ID" DisplayMemberBinding="{Binding RetailerID}"/>
+                    <GridViewColumn Header="SubCategory ID" DisplayMemberBinding="{Binding SubCategoryID}"/>
+                    <GridViewColumn Header="Product Name" DisplayMemberBinding="{Binding ProductName}"/>
+                    <GridViewColumn Header="Product Description" DisplayMemberBinding="{Binding ProductDescription}"/>
+                    <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price}"/>
+                    <GridViewColumn Header="Units in Stock" DisplayMemberBinding="{Binding UnitsInStock}"/>
+                    <GridViewColumn Header="Is Discontinued" DisplayMemberBinding="{Binding IsDiscontinued}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="buttonAddCategoryProductPage" Margin="35,23,30,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyleAdd}" Width="Auto" Click="buttonAddCategoryProductPage_Click"/>
+        <Button x:Name="buttonEditCategoryProductPage" Style="{StaticResource ButtonStyleEdit}" HorizontalAlignment="Left" Margin="0,23,0,0" VerticalAlignment="Top" Grid.Column="1" Click="buttonEditCategoryProductPage_Click"/>
+        <Button x:Name="buttonAddProductProductPage" Margin="82,23,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyleAdd}" Width="32" Click="buttonAddProductProductPage_Click" Grid.Column="4" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+        <Button x:Name="buttonAddSubCategoryProductPage" Margin="65,23,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyleAdd}" Width="Auto" Click="buttonAddSubCategoryProductPage_Click" Grid.Column="2"/>
+        <Button x:Name="buttonEditProductProductPage" Style="{StaticResource ButtonStyleEdit}" HorizontalAlignment="Left" Margin="55,23,0,0" VerticalAlignment="Top" Grid.Column="5" Click="buttonEditProductProductPage_Click"/>
+        <Button x:Name="buttonEditSubCategoryProductPage" Style="{StaticResource ButtonStyleEdit}" HorizontalAlignment="Left" Margin="34,23,0,0" VerticalAlignment="Top" Grid.Column="3" Click="buttonEditSubCategoryProductPage_Click"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="10" HorizontalAlignment="Left" Height="92" Margin="86,60,0,0" VerticalAlignment="Top" Width="97" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Image x:Name="productImageProductMainPage" Height="85" Width="85" Margin="0,0,0,0" Source="{Binding ElementName=listViewProductPageProductTable, Path=SelectedItem.Picture}"/>
+        </Border>
+
+    </Grid>
+
+</Page>

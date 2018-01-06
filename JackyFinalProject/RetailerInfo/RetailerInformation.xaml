@@ -1,0 +1,21 @@
+﻿<Window x:Class="JackyFinalProject.RetailerInfo.RetailerInformation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JackyFinalProject.RetailerInfo"
+        mc:Ignorable="d"
+        Title="Retailer Information" Height="500" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+
+    <Grid Style="{StaticResource OverallBackgroundColor3}" Margin="0,0,0,0">
+        <ListView x:Name="RetailerList" HorizontalAlignment="Left" Height="320" Margin="100,70,0,0" VerticalAlignment="Top" Width="250">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Retailer ID" Width="100" DisplayMemberBinding="{Binding RetailerID}"/>
+                    <GridViewColumn Header="Retailer Name" Width="100" DisplayMemberBinding="{Binding Retailer1}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="button" HorizontalAlignment="Left" Margin="385,205,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonSelect}" Click="button_Click"/>
+    </Grid>
+</Window>

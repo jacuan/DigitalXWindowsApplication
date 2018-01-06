@@ -1,0 +1,22 @@
+﻿<Page x:Class="JackyFinalProject.SplashWindow.PageAfterLogout"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JackyFinalProject.SplashWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="480" d:DesignWidth="1100"
+      Title="PageAfterLogout">
+
+    <Canvas x:Name="canvasSplash" Style="{StaticResource OverallBackgroundColor1}">
+        <Path Name="path" Canvas.Top="40" Canvas.Left="100" Style="{StaticResource PathStyle1}"/>
+
+        <Label x:Name="label" Content="Dynamic Management System" 
+               Canvas.Left="360" Canvas.Top="30" Style="{StaticResource LabelStyle1}"/>
+
+        <Label x:Name="label1" Content="v.1.0.0.0" Canvas.Left="770" 
+               Canvas.Top="100" Style="{StaticResource LabelStyle2}"/>
+
+        <Image Source="/Images/imgSplash002.png" Canvas.Top="155" Canvas.Left="387"></Image>
+    </Canvas>
+</Page>

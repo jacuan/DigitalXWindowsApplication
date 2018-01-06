@@ -1,0 +1,32 @@
+﻿<Window x:Class="JackyFinalProject.Employees.EditEmployeeAddress"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JackyFinalProject.Employees"
+        mc:Ignorable="d"
+        Title="Edit Employee Address" Height="500" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+
+    <Grid Style="{StaticResource OverallBackgroundColor3}">
+        <Label x:Name="label_Copy3" Content="Postal Code" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle3}"/>
+        <Label x:Name="label_Copy4" Content="Country" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle3}"/>
+        <Label x:Name="label_Copy5" Content="City" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle3}"/>
+        <Label x:Name="label_Copy6" Content="Suburb" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle3}"/>
+        <Label x:Name="label_Copy7" Content="Street" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle3}"/>
+        <Label x:Name="label_Copy8" Content="Address Type" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle3}"/>
+        <Label x:Name="label_Copy9" Content="Address ID" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Style="{StaticResource LabelStyle3}"/>
+        <TextBlock x:Name="textBoxAddressIDEditEmployeeWindow" Text="{Binding AddressID}" HorizontalAlignment="Left" Margin="170,10,0,0" VerticalAlignment="Top" Style="{StaticResource TextBlockStyle11}"/>
+        <TextBlock x:Name="textBlockAddressTypeEditEmployeeWindow" Text="{Binding AddressType}" HorizontalAlignment="Left" Margin="170,65,0,0" VerticalAlignment="Top" Style="{StaticResource TextBlockStyle12}"/>
+        <TextBox x:Name="textBoxStreetEditEmployeeWindow" Text="{Binding Street}" HorizontalAlignment="Left" Margin="170,120,0,0" VerticalAlignment="Top" Style="{StaticResource TextBoxStyle3}"/>
+        <TextBox x:Name="textBoxSuburbEditEmployeeWindow" Text="{Binding Suburb}" HorizontalAlignment="Left" Margin="170,175,0,0" VerticalAlignment="Top" Style="{StaticResource TextBoxStyle3}"/>
+        <TextBox x:Name="textBoxCityEditEmployeeWindow" Text="{Binding City}" HorizontalAlignment="Left" Margin="170,230,0,0"  VerticalAlignment="Top" Style="{StaticResource TextBoxStyle3}"/>
+        <TextBox x:Name="textBoxCountryEditEmployeeWindow" Text="{Binding Country}" HorizontalAlignment="Left" Margin="170,285,0,0" VerticalAlignment="Top" Style="{StaticResource TextBoxStyle3}"/>
+        <TextBox x:Name="textBoxPostCodeEditEmployeeWindow" Text="{Binding PostalCode}" HorizontalAlignment="Left" Height="40" Margin="170,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <Button x:Name="saveButtonEditEmployeeAddressWindow" Content="Save" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top" Width="170" Height="46" 
+                Click="saveButtonEditEmployeeAddressWindow_Click"/>
+        <Button x:Name="calcelButtonEditEmployeeAddressWindow" Content="Cancel" HorizontalAlignment="Left" Margin="305,400,0,0" VerticalAlignment="Top" Width="170" Height="46" 
+                Click="calcelButtonEditEmployeeAddressWindow_Click"/>
+        <Button x:Name="buttonFindAddressType" Style="{StaticResource ButtonFind}" HorizontalAlignment="Left" Margin="385,65,0,0" VerticalAlignment="Top" Height="40"
+                Click="buttonFindAddressType_Click"/>
+    </Grid>
+</Window>

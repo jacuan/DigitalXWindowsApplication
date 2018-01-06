@@ -1,0 +1,35 @@
+﻿<Window x:Class="JackyFinalProject.Orders.EditDetatiledOrderInformationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JackyFinalProject.Orders"
+        mc:Ignorable="d"
+        Title="Edit Detatiled Order Information" Height="600" Width="600" WindowStartupLocation="CenterScreen">
+
+    <Grid Style="{StaticResource OverallBackgroundColor3}">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,77,0,0"  Text="Order ID" VerticalAlignment="Top" Style="{StaticResource TextBlockStyle7}"/>
+        <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="10,135,0,0"  Text="Product ID" VerticalAlignment="Top" Style="{StaticResource TextBlockStyle7}"/>
+        <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="10,15,0,0"  Text="Detailed ID" VerticalAlignment="Top" Style="{StaticResource TextBlockStyle7}"/>
+        <TextBlock x:Name="textBlockOrderIDEditDetailedOrderInformationWindow" Text="{Binding OrderID}"
+                 HorizontalAlignment="Left" Margin="185,77,0,0" VerticalAlignment="Top" Style="{StaticResource TextBlockStyle7}" Width="200"/>
+        <TextBlock x:Name="textBoxDetailedIDEditDetailedOrderInformationWindow" Text="{Binding DetailID}"
+                 HorizontalAlignment="Left" Margin="185,15,0,0" VerticalAlignment="Top" Style="{StaticResource TextBlockStyle9}"/>
+        <Button x:Name="SaveButtonOnEditDetailedOrderInformationWindow" Content="Save" HorizontalAlignment="Left" Margin="80,480,0,0" VerticalAlignment="Top" Width="170" Height="50" 
+                Click="SaveButtonOnEditDetailedOrderInformationWindow_Click"/>
+        <Button x:Name="cancelButtonEditDetailedOrderInformationWindow" Content="Cancel" HorizontalAlignment="Left" Margin="340,480,0,0" VerticalAlignment="Top" Width="170" Height="50" 
+                Click="cancelButtonEditDetailedOrderInformationWindow_Click"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="10,200,0,0"  Text="Quantity" VerticalAlignment="Top" Style="{StaticResource TextBlockStyle7}"/>
+        <TextBox x:Name="textBoxQuantityEditDetailedOrderInformationWindow" Text="{Binding Quantity}"
+                 HorizontalAlignment="Left" Margin="185,200,0,0" VerticalAlignment="Top" Style="{StaticResource TextBoxStyle2}"/>
+        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="10,265,0,0"  Text="Packaged By" VerticalAlignment="Top" Style="{StaticResource TextBlockStyle7}"/>
+        <TextBlock x:Name="textBlockProductIDEditOrderDetailedInformationWindow" Text="{Binding ProductID}" HorizontalAlignment="Left" Margin="185,135,0,0" VerticalAlignment="Top" 
+        	Style="{StaticResource TextBlockStyle12}" Width="200"/>
+        <Button x:Name="buttonFindProduct" Style="{StaticResource ButtonFind}" HorizontalAlignment="Left" Margin="412,135,0,0" VerticalAlignment="Top" Height="40" Click="buttonFindProduct_Click"/>
+        <Button x:Name="buttonFindEmployee" Style="{StaticResource ButtonFind}" HorizontalAlignment="Left" Margin="412,265,0,0" VerticalAlignment="Top" Height="40" Click="buttonFindEmployee_Click"/>
+        <TextBlock x:Name="textBlockEmployeeIDEditOrderDetailedInformationWindow_Copy" Text="{Binding PackagedBy}" HorizontalAlignment="Left" Margin="185,265,0,0" VerticalAlignment="Top" 
+        	Style="{StaticResource TextBlockStyle12}" Width="200"/>
+        <TextBlock x:Name="textBlockPackaged" Background="Transparent" HorizontalAlignment="Left" Margin="185,330,0,0"  Text="Packaged" VerticalAlignment="Top" Style="{StaticResource TextBlockStyle7}"/>
+        <TextBlock x:Name="textBlockUnpackaged" Background="Transparent" HorizontalAlignment="Left" Margin="185,330,0,0"  Text="Unpackaged" VerticalAlignment="Top" Style="{StaticResource TextBlockStyle7}"/>
+    </Grid>
+</Window>

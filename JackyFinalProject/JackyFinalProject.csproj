@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{548ED7AD-77D4-4691-99C5-03564AB9F5FD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JackyFinalProject</RootNamespace>
+    <AssemblyName>JackyFinalProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Address.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddressInfo\AddressInformation.xaml.cs">
+      <DependentUpon>AddressInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddressType.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContactType.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\AddNewCustomerAddress.xaml.cs">
+      <DependentUpon>AddNewCustomerAddress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\AddNewCustomerBasicInformation.xaml.cs">
+      <DependentUpon>AddNewCustomerBasicInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\CustomersPage.xaml.cs">
+      <DependentUpon>CustomersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\EditCustomerAddress.xaml.cs">
+      <DependentUpon>EditCustomerAddress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\EditCustomerBasicInformation.xaml.cs">
+      <DependentUpon>EditCustomerBasicInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\AddNewAdmin.xaml.cs">
+      <DependentUpon>AddNewAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\AddNewEmployeeAddress.xaml.cs">
+      <DependentUpon>AddNewEmployeeAddress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\AddNewEmployeeBasicInformation.xaml.cs">
+      <DependentUpon>AddNewEmployeeBasicInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\EditEmployeeAddress.xaml.cs">
+      <DependentUpon>EditEmployeeAddress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\EditEmployeeBasicInformation.xaml.cs">
+      <DependentUpon>EditEmployeeBasicInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\EmployeeRoleManagementWindow.xaml.cs">
+      <DependentUpon>EmployeeRoleManagementWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\EmployeesPage.xaml.cs">
+      <DependentUpon>EmployeesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FinalProjectEDM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="Invoiced.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetail.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\AddBasicOrderInformationWindow.xaml.cs">
+      <DependentUpon>AddBasicOrderInformationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\AddDetatiledOrderInformationWindow.xaml.cs">
+      <DependentUpon>AddDetatiledOrderInformationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\AddInvoiceWindow.xaml.cs">
+      <DependentUpon>AddInvoiceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\EditBasicOrderInformationWindow..xaml.cs">
+      <DependentUpon>EditBasicOrderInformationWindow..xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\EditDetatiledOrderInformationWindow.xaml.cs">
+      <DependentUpon>EditDetatiledOrderInformationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\OrdersPage.xaml.cs">
+      <DependentUpon>OrdersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\SearchCustomer.xaml.cs">
+      <DependentUpon>SearchCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\SearchEmployee.xaml.cs">
+      <DependentUpon>SearchEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\SearchProduct.xaml.cs">
+      <DependentUpon>SearchProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSubCategory.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Products\AddCategory.xaml.cs">
+      <DependentUpon>AddCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Products\AddProduct.xaml.cs">
+      <DependentUpon>AddProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Products\AddSubCategory.xaml.cs">
+      <DependentUpon>AddSubCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Products\EditCategory.xaml.cs">
+      <DependentUpon>EditCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Products\EditProduct.xaml.cs">
+      <DependentUpon>EditProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Products\EditSubCategory.xaml.cs">
+      <DependentUpon>EditSubCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Products\ProductsPage.xaml.cs">
+      <DependentUpon>ProductsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RetailerInfo\RetailerInformation.xaml.cs">
+      <DependentUpon>RetailerInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="selectCustomerAddresses_Result.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="selectCustomerContacts_Result.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="selectCustomers_Result.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="selectEmployeeAddresses_Result.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="selectEmployeeContacts_Result.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="selectEmployees_Result.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Shipper.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShipperOption.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingLocation.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingMethod.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SplashWindow\PageAfterLogout.xaml.cs">
+      <DependentUpon>PageAfterLogout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SplashWindow\SplashWindow.xaml.cs">
+      <DependentUpon>SplashWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LoginUserControl.xaml.cs">
+      <DependentUpon>LoginUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WishList.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WishListItem.cs">
+      <DependentUpon>FinalProjectEDM.tt</DependentUpon>
+    </Compile>
+    <Page Include="AddressInfo\AddressInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customers\AddNewCustomerAddress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customers\AddNewCustomerBasicInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customers\CustomersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customers\EditCustomerAddress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customers\EditCustomerBasicInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employees\AddNewAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employees\AddNewEmployeeAddress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employees\AddNewEmployeeBasicInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employees\EditEmployeeAddress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employees\EditEmployeeBasicInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employees\EmployeeRoleManagementWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employees\EmployeesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinalProjectEDM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalProjectEDM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FinalProjectEDM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalProjectEDM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Orders\AddBasicOrderInformationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Orders\AddDetatiledOrderInformationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Orders\AddInvoiceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Orders\EditBasicOrderInformationWindow..xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Orders\EditDetatiledOrderInformationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Orders\OrdersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Orders\SearchCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Orders\SearchEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Orders\SearchProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\AddCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\AddProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\AddSubCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\EditCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\EditProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\EditSubCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\ProductsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\FrameStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\LabelStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\OverallBackgroundColor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\PasswordBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\PathStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\TextBlockStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\TextBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RetailerInfo\RetailerInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SplashWindow\PageAfterLogout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SplashWindow\SplashWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\LoginUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="FinalProjectEDM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FinalProjectEDM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="FinalProjectEDM.edmx.diagram">
+      <DependentUpon>FinalProjectEDM.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FinalProjectEDM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinalProjectEDM.edmx</DependentUpon>
+      <LastGenOutput>FinalProjectEDM.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="FinalProjectEDM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinalProjectEDM.edmx</DependentUpon>
+      <LastGenOutput>FinalProjectEDM.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Images\Customer1.png" />
+    <Resource Include="Images\Insert.png" />
+    <Resource Include="Images\Generate.png" />
+    <Resource Include="Images\Delete.png" />
+    <Resource Include="Images\Select.png" />
+    <Resource Include="Images\Find.png" />
+    <Resource Include="Images\ArrowDown.png" />
+    <Resource Include="Images\ArrowUp.png" />
+    <Resource Include="Images\Save.png" />
+    <Resource Include="Images\AddButton.png" />
+    <Resource Include="Images\EditButton.png" />
+    <Resource Include="Images\logoutButton.png" />
+    <Resource Include="Images\Order.png" />
+    <Resource Include="Images\Login1.png" />
+    <Resource Include="Images\Customer.png" />
+    <Resource Include="Images\Employee.png" />
+    <Resource Include="Images\Product.png" />
+    <Resource Include="Images\imgSplash002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

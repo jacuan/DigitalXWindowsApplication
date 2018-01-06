@@ -1,0 +1,77 @@
+﻿<Page x:Class="JackyFinalProject.Customers.CustomersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JackyFinalProject.Customers"
+      mc:Ignorable="d" 
+      d:DesignHeight="485" d:DesignWidth="1160"
+      Title="Customer Information">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Name="customerTextBlockSearchCustomer" Text=" Search: Type Customer LAST name Here" 
+                   Style="{StaticResource TextBlockStyle13}" Margin="53,15,54,22" Width="Auto" Height="Auto" Grid.ColumnSpan="4" Grid.Column="1" />
+        <TextBox x:Name="customerTextBoxSearchCustomerWindow"
+                  Style="{StaticResource TextBoxStyle4}" Margin="53,15,54,22" Width="Auto" Height="Auto" Grid.ColumnSpan="4" Grid.Column="1" 
+                 TextChanged="customerTextBoxSearchCustomerWindow_TextChanged" />
+
+        <ListView x:Name="listViewCustomersPageCustomerTable" Grid.ColumnSpan="5" HorizontalAlignment="Left" Height="406" 
+                 Margin="10,59,0,0" Grid.RowSpan="6" VerticalAlignment="Top" Width="410" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Customer ID"  Width="75" DisplayMemberBinding="{Binding CustomerID}"/>
+                    <GridViewColumn Header="User Name"  Width="100" DisplayMemberBinding="{Binding UserName}"/>
+                    <GridViewColumn Header="First Name"  Width="100" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="Last Name"  Width="100" DisplayMemberBinding="{Binding LastName}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="buttonNewCustomerBasicInformationCustomerPage" Margin="30,22,35,0" VerticalAlignment="Top" 
+                 Style="{StaticResource ButtonStyleAdd}" 
+                Click="buttonNewCustomerBasicInformationCustomerPage_Click"  Width="Auto"/>
+        <ListView x:Name="listViewCustomerPageCustomerAddressTable" ItemsSource="{Binding ElementName=listViewCustomersPageCustomerTable, Path=SelectedItem.Addresses}"
+                  Grid.ColumnSpan="8" Grid.Column="4" HorizontalAlignment="Left" Height="406" Margin="67,59,0,0" Grid.RowSpan="6" VerticalAlignment="Top" Width="695">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Address ID" Width="65" DisplayMemberBinding="{Binding AddressID}"/>
+                    <GridViewColumn Header="Address Type"  Width="80" DisplayMemberBinding="{Binding AddressType}"/>
+                    <GridViewColumn Header="Street"  Width="150" DisplayMemberBinding="{Binding Street}"/>
+                    <GridViewColumn Header="Suburb"  Width="100" DisplayMemberBinding="{Binding Suburb}"/>
+                    <GridViewColumn Header="City"  Width="100" DisplayMemberBinding="{Binding City}"/>
+                    <GridViewColumn Header="Country"  Width="100" DisplayMemberBinding="{Binding Country}"/>
+                    <GridViewColumn Header="Postal Code"  Width="100" DisplayMemberBinding="{Binding PostalCode}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="buttonNewCustomerAddressCustomerPage" HorizontalAlignment="Left" Margin="0,22,0,0" VerticalAlignment="Top" 
+        	Style="{StaticResource ButtonStyleAdd}" 
+                Click="buttonNewCustomerAddressCustomerPage_Click"  Grid.Column="5"/>
+        <Button x:Name="buttonEditCustomerBasicInformationCustomerPage" Style="{StaticResource ButtonStyleEdit}" HorizontalAlignment="Left" Margin="88,22,0,0" VerticalAlignment="Top" 
+                Click="buttonEditCustomerBasicInformationCustomerPage_Click"  Grid.ColumnSpan="2"/>
+        <Button x:Name="buttonEditCustomerAddressCustomerPage" Style="{StaticResource ButtonStyleEdit}" HorizontalAlignment="Left" Margin="55,22,0,0" VerticalAlignment="Top" Grid.Column="5" 
+                Click="buttonEditCustomerAddressCustomerPage_Click"/>
+    </Grid>
+</Page>

@@ -1,0 +1,90 @@
+﻿<Page x:Class="JackyFinalProject.Employees.EmployeesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JackyFinalProject.Employees"
+      mc:Ignorable="d" 
+      d:DesignHeight="485" d:DesignWidth="1200"
+      Title="Employees Information">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Name="employeeTextBlockSearchEmployee" Text=" Search: Type Employee LAST name Here" 
+                   Style="{StaticResource TextBlockStyle13}" Margin="10,15,45,39" Width="Auto" Height="Auto" Grid.ColumnSpan="3" Grid.Column="1" />
+        <TextBox x:Name="employeeTextBoxSearchEmployeeWindow"
+                  Style="{StaticResource TextBoxStyle4}" Margin="10,15,45,39" Width="Auto" Height="Auto" Grid.ColumnSpan="3" Grid.Column="1" TextChanged="customerTextBoxSearchCustomerWindow_TextChanged" 
+                  />
+        <ListView x:Name="listViewEmployeePageEmployeeTable" Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="415" 
+                 Margin="0,47,0,0" Grid.RowSpan="6" VerticalAlignment="Top" Width="335" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Employee ID" DisplayMemberBinding="{Binding EmployeeID}"/>
+                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Username}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="buttonNewEmployeeBasicInformationEmployeePage" Margin="10,10,55,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyleAdd}" Width="Auto" Click="buttonNewEmployeeBasicInformationEmployeePage_Click"/>
+        <Button x:Name="editRoleButtonEmployeePage" Style="{StaticResource ButtonStyleEdit}" HorizontalAlignment="Right" Margin="0,49,30,0" 
+                VerticalAlignment="Top" Grid.Column="4" Grid.Row="2" Click="editRoleButtonEmployeePage_Click"/>
+        <ListView x:Name="listViewEditEmployeePageRoleTable" HorizontalAlignment="Left" Height="202" 
+        	Margin="70,0,0,23" VerticalAlignment="Bottom" Width="170" Grid.ColumnSpan="3" 
+                  ItemsSource="{Binding ElementName=listViewEmployeePageEmployeeTable, Path=SelectedItem.Roles}" Grid.RowSpan="3" Grid.Column="3" Grid.Row="3">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Role ID" DisplayMemberBinding="{Binding RoleID}"/>
+                    <GridViewColumn Header="Role" Width="150" DisplayMemberBinding="{Binding Role1}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="ButtonEditEmployeeBasicInformationEmployeePage" Style="{StaticResource ButtonStyleEdit}" HorizontalAlignment="Left" Margin="55,10,0,0" 
+                VerticalAlignment="Top" Click="ButtonEditEmployeeBasicInformationEmployeePage_Click"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="140" 
+                Margin="70,47,0,0" Grid.RowSpan="3" VerticalAlignment="Top" Width="170">
+            <Image x:Name="imageEmployee" 
+                   Source="{Binding ElementName=listViewEmployeePageEmployeeTable, Path=SelectedItem.EmployeeImage}" 
+                   Margin="10,10,10,10" Height="120" Width="120"/>
+        </Border>
+        <ListView x:Name="listViewEmployeeAddressEmployeePage" ItemsSource="{Binding ElementName=listViewEmployeePageEmployeeTable, Path=SelectedItem.Addresses}"
+        	Grid.ColumnSpan="7" Grid.Column="5" HorizontalAlignment="Left" Height="414" Margin="70,47,0,0" Grid.RowSpan="6" VerticalAlignment="Top" Width="620">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Address ID" Width="65" DisplayMemberBinding="{Binding AddressID}"/>
+                    <GridViewColumn Header="Address Type"  Width="80" DisplayMemberBinding="{Binding AddressType}"/>
+                    <GridViewColumn Header="Street"  Width="150" DisplayMemberBinding="{Binding Street}"/>
+                    <GridViewColumn Header="Suburb"  Width="100" DisplayMemberBinding="{Binding Suburb}"/>
+                    <GridViewColumn Header="City"  Width="100" DisplayMemberBinding="{Binding City}"/>
+                    <GridViewColumn Header="Country"  Width="100" DisplayMemberBinding="{Binding Country}"/>
+                    <GridViewColumn Header="Postal Code"  Width="100" DisplayMemberBinding="{Binding PostalCode}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="buttonNewAddressEmployeePage" Margin="10,10,54,0" VerticalAlignment="Top" Style="{StaticResource ButtonStyleAdd}" Width="Auto" Grid.Column="8" Click="buttonNewAddressEmployeePage_Click"/>
+        <Button x:Name="ButtonEditEmployeeAddressEmployeePage" Style="{StaticResource ButtonStyleEdit}" HorizontalAlignment="Left" Margin="54,10,0,0" 
+        	VerticalAlignment="Top" Grid.Column="8" Click="ButtonEditEmployeeAddressEmployeePage_Click"/>
+    </Grid>
+</Page>

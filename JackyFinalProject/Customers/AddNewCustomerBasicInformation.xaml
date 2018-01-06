@@ -1,0 +1,41 @@
+﻿<Window x:Class="JackyFinalProject.Customers.AddNewCustomerBasicInformation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JackyFinalProject.Customers"
+        mc:Ignorable="d"
+        Title="Add New Customer Basic Information" Height="500" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+
+    <Grid Style="{StaticResource OverallBackgroundColor3}">
+
+        <Label x:Name="label" Content="Customer ID" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" 
+               Style="{StaticResource LabelStyle3}"/>
+        <TextBlock x:Name="textBlockCustomerIDAddCustomerBasicInformationWindow" Text="{Binding CustomerID}"
+                 HorizontalAlignment="Left" Margin="225,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                 Style="{StaticResource TextBlockStyle11}" Width="170"/>
+        <Label x:Name="label_Copy" Content="Last Name" HorizontalAlignment="Left" Margin="20,267,0,0" VerticalAlignment="Top" 
+               Style="{StaticResource LabelStyle3}"/>
+        <Label x:Name="label_Copy1" Content="First Name" HorizontalAlignment="Left" Margin="20,190,0,0" VerticalAlignment="Top" 
+               Style="{StaticResource LabelStyle3}"/>
+        <Label x:Name="label_Copy2" Content="Username" HorizontalAlignment="Left" VerticalAlignment="Top" 
+               Style="{StaticResource LabelStyle3}" Margin="20,110,0,0"/>
+        <TextBox x:Name="textBoxLastNameAddCustomerBasicInformationWindow"  Text="{Binding LastName}"
+                 
+                 HorizontalAlignment="Left" Margin="225,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+        	Style="{StaticResource TextBoxStyle3}" Width="170"/>
+        <TextBox x:Name="textBoxFirstNameAddCustomerBasicInformationWindow" Text="{Binding FirstName}"
+                 HorizontalAlignment="Left" Margin="225,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+        	     Style="{StaticResource TextBoxStyle3}" Width="170"/>
+        <TextBox x:Name="textBoxUserNameAddCustomerBasicInformationWindow"  Text="{Binding UserName}"
+                 HorizontalAlignment="Left" Margin="225,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+        	     Style="{StaticResource TextBoxStyle3}" Width="170"/>
+
+        <Button x:Name="saveButtonUserNameAddCustomerBasicInformationWindow" Content="Save" HorizontalAlignment="Left" Margin="95,375,0,0" VerticalAlignment="Top" Width="115" Height="55" 
+                Click="saveButtonUserNameAddCustomerBasicInformationWindow_Click"/>
+        <Button x:Name="cancelButtonUserNameAddCustomerBasicInformationWindow" Content="Cancel" HorizontalAlignment="Left" Margin="290,375,0,0" VerticalAlignment="Top" Width="115" Height="55" 
+                Click="cancelButtonUserNameAddCustomerBasicInformationWindow_Click"/>
+        <TextBlock x:Name="textBlockCustomerIDDesAddCustomerBasicInformationWindow" Text="Customer ID will be generated automatically"
+        	HorizontalAlignment="Left" Margin="225,55,0,0" VerticalAlignment="Top"  Style="{StaticResource TextBlockStyle10}" />
+    </Grid>
+</Window>
